@@ -8,6 +8,7 @@
     <!-- Objets opaques -->
     <object-name>structure1</object-name>
     <object-name>structure2</object-name>
+    <object-name>support</object-name>
     <object-name>axe</object-name>
     <object-name>patte</object-name>
     <object-name>ailes</object-name>
@@ -28,6 +29,15 @@
 
     <!-- Objets transparents -->
     <object-name>cables</object-name>
+    <object-name>dir1G</object-name>
+    <object-name>dir1D</object-name>
+    <object-name>dir2G</object-name>
+    <object-name>dir2D</object-name>
+    <object-name>prof1</object-name>
+    <object-name>prof2</object-name>
+    <object-name>prof3</object-name>
+    <object-name>prof4</object-name>
+    <object-name>prof5</object-name>
     <object-name>propblur</object-name>
     <object-name>propdisc</object-name>
   </animation>
@@ -35,6 +45,15 @@
   <animation>
     <type>noshadow</type>
     <object-name>cables</object-name>
+    <object-name>dir1G</object-name>
+    <object-name>dir1D</object-name>
+    <object-name>dir2G</object-name>
+    <object-name>dir2D</object-name>
+    <object-name>prof1</object-name>
+    <object-name>prof2</object-name>
+    <object-name>prof3</object-name>
+    <object-name>prof4</object-name>
+    <object-name>prof5</object-name>
     <object-name>propdisc</object-name>
     <object-name>propblur</object-name>
   </animation>
@@ -101,7 +120,7 @@
     <type>spin</type>
     <object-name>HeliceComplete</object-name>
     <property>engines/engine[0]/rpm</property>
-    <factor> 1 </factor>
+    <factor> -1 </factor>
     <center>
       <x-m> -3.821 </x-m>
       <y-m>  0.000 </y-m>
@@ -116,14 +135,16 @@
 
   <!-- Gouverne de profondeur -->
   <animation>
-    <name>Derive</name>
+    <name>DeriveComplete</name>
     <object-name>queue</object-name>
     <object-name>queuesoie</object-name>
+    <object-name>prof1</object-name>
+    <object-name>prof3</object-name>
   </animation>
 
   <animation>
     <type>rotate</type>
-    <object-name>Derive</object-name>
+    <object-name>DeriveComplete</object-name>
     <property>controls/flight/elevator</property>
     <factor>15</factor>
     <center>
@@ -138,16 +159,209 @@
     </axis>
   </animation>
 
-  <!-- Gouverne de direction -->
   <animation>
     <type>rotate</type>
-    <object-name>Derive</object-name>
+    <object-name>prof1</object-name>
+    <property>controls/flight/elevator</property>
+    <factor>-15</factor>
+    <center>
+      <x-m> 2.772</x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.249 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>prof3</object-name>
+    <property>controls/flight/elevator</property>
+    <factor>-15</factor>
+    <center>
+      <x-m>  2.772</x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.893 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>ProfondeurComplete</name>
+    <object-name>manche</object-name>
+    <object-name>support</object-name>
+    <object-name>prof2</object-name>
+    <object-name>prof5</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ProfondeurComplete</object-name>
+    <property>controls/flight/elevator</property>
+    <factor>15</factor>
+    <center>
+      <x-m> -2.884</x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.865 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>prof2</object-name>
+    <property>controls/flight/elevator</property>
+    <factor>-15</factor>
+    <center>
+      <x-m> -2.884</x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.035 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>prof5</object-name>
+    <property>controls/flight/elevator</property>
+    <factor>-15</factor>
+    <center>
+      <x-m> -2.884</x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.695 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  <!-- Gouverne de direction -->
+  <animation>
+    <name>GouverneComplete</name>
+    <object-name>queue</object-name>
+    <object-name>queuesoie</object-name>
+    <object-name>dir2G</object-name>
+    <object-name>dir2D</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>GouverneComplete</object-name>
     <property>controls/flight/rudder</property>
     <factor>15</factor>
     <center>
       <x-m>  2.839</x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.323 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 0.000 </y>
+      <z> 1.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>dir2G</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-15</factor>
+    <center>
+      <x-m>  2.888</x-m>
+      <y-m> -1.219 </y-m>
+      <z-m> -0.321 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 0.000 </y>
+      <z> 1.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>dir2D</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-15</factor>
+    <center>
+      <x-m>  2.888</x-m>
+      <y-m>  1.219 </y-m>
+      <z-m> -0.321 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 0.000 </y>
+      <z> 1.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>DirectionComplete</name>
+    <object-name>manche</object-name>
+    <object-name>dir1G</object-name>
+    <object-name>dir1D</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>DirectionComplete</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>15</factor>
+    <center>
+      <x-m> -2.884</x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.865 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 0.000 </y>
+      <z> 1.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>dir1G</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-15</factor>
+    <center>
+      <x-m> -2.884</x-m>
+      <y-m> -0.262 </y-m>
+      <z-m> -1.010 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 0.000 </y>
+      <z> 1.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>dir1D</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-15</factor>
+    <center>
+      <x-m> -2.884</x-m>
+      <y-m>  0.262 </y-m>
+      <z-m> -1.010 </z-m>
     </center>
     <axis>
       <x> 0.000 </x>
