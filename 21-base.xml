@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <author>BARANGER Emmanuel (3D/FDM)</author>
+    <aircraft-version>0.2</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/21/21-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/21/Sounds/21-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/21/Models/21.xml</path>
+    </model>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Santos Dumont N 21 Demoiselle</title>
+      <line>______________________________________________</line>
+    </help>
+
+    <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>180</weight-lb>
+      <max-lb>240</max-lb>
+      <min-lb>140</min-lb>
+    </weight>
+
+  </sim>
+
+  <engines>
+    <engine>
+      <rpm type="float">0.0</rpm>
+    </engine>
+  </engines>
+
+</PropertyList>
+

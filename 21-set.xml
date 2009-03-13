@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="21-jsbsim-cnf.xml"> -->
+<PropertyList include="21-yasim-cnf.xml">
+
+  <sim>
+    <description>Santos Dumont N 21 Demoiselle</description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+  </sim>
+
+</PropertyList>
+
