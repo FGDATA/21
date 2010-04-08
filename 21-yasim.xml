@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Santo Dumont N 21 "Demoiselle" 1909 : 2009 Emmanuel BARANGER
+                                           2010 EMmanuel BARANGER with melchior script
 
-     Winspan : 5 m                            ( 16,4 ft)
-     Lenght  : 8 m                            ( 26.2 ft) 
-     Masse   : 93 kg (pilote 50 kg)           (205.0 lb - 110 lb)
-     Engine  : 1 x Darrack 30 ch
-     Speed   : 90 km/h                        ( 50.0 kt) 
+     sources          : 
 
+     wingspan         : 5 m                            ( 16,4 ft)
+     length           : 8 m                            ( 26.2 ft) 
+     max speed        : 90 km/h                        ( 50.0 kt) 
+     empty weight     : 93 kg (pilote 50 kg)           (205.0 lb - 110 lb)
+     engine           : Darrack (30 hp)
 -->
+
 
 <airplane mass="500">
 
   <!-- Approach configuration -->
-  <approach speed="20" aoa="15">
+  <approach speed="15" aoa="8">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.5"/>
     <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
     <control-setting axis="/sim/weight[0]/weight-lb" value ="110"/>
@@ -30,69 +33,77 @@
   <!-- pilot's eyepoint -->
   <cockpit x="2.514" y="0.0" z="-0.221"/>
 
-  <fuselage ax="3.978" ay="0" az="-0.181" bx="-4.0" by="0" bz="-0.181" width="0.728" taper="0.2" midpoint="0.5"/>
+  <fuselage ax="3.659" ay="0" az="-0.181" bx="-2.817" by="0" bz="-0.324" width="0.728" midpoint="0.1" taper="0.2"/>
 
-  <wing x="2.579" y="0" z="0.054"
-        chord="1.60"
-        length="4.87"
-        taper="1.0"
-        incidence="2"
-        twist="-3"
-        sweep="0"
-        dihedral="5"
-        camber="0.065">
+  <wing x="2.529" y="0" z="0.054"
+        chord="2.260"
+        length="2.516"
+        incidence="4"
+        dihedral="10"
+        camber="0.001"
+        taper="1">
         <stall aoa="18" width="4" peak="1.5"/>
-        <flap0 start=".31" end="0.85" lift="1.5" drag="1.4"/>
+        <flap0 start="0.45" end="1" lift="1.5" drag="1.4"/>
+
         <control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
         <control-input axis="/controls/flight/aileron-trim" control="FLAP0" split="true"/>
+
         <control-output control="FLAP0" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
         <control-output control="FLAP0" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
   </wing>
 
-  <hstab x="-2.887" y="0.0" z="-0.320"
+  <hstab x="-3.45" y="0.0" z="-0.320"
          chord="1.13"
-         length="1.49"
-         taper="0.8"
-         effectiveness="1.24"
-         sweep="0">
+         length="1.16"
+         taper="1">
          <stall aoa="16" width="4" peak="1.5"/>
          <flap0 start="0" end="1" lift="1.4" drag="1.2"/>
+
          <control-input axis="/controls/flight/elevator" control="FLAP0"/>
          <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
          <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
   </hstab>
 
-  <vstab x="-3.386" y="0" z="-0.855"
-         taper="0.38"
-         effectiveness="2.0"
-         length="1.31"
+  <vstab x="-3.3" y="0" z="-0.855"
          chord="1.37"
-         sweep="0"
-         incidence="1.5">
+         length="1.068"
+         taper="1">
          <stall aoa="16" width="4" peak="1.5"/>
          <flap0 start="0" end="1" lift="2.0" drag="1.2"/>
+
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
          <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
   </vstab>
 
-  <propeller x="3.681" y="0.0" z="0.324"
+  <!-- Engines   source            :
+
+                 name              : flat-twin Darracq
+                 type              : 
+                 power cruise      : 30 hp
+                 weight            :
+  -->
+  <propeller x="3.618" y="0.0" z="0.324"
+             radius="0.927"
              mass="150"
              moment="4"
-             radius="0.90"
-	     cruise-speed="50"
-             cruise-rpm="2150"
+             cruise-speed="50"
              cruise-alt="8000"
              cruise-power="30"
+             cruise-rpm="2150"
              takeoff-power="30"
              takeoff-rpm="2300"
-             eng-power="30"
-             eng-rpm="2500">
+             gear-ratio="0.5">
+             <piston-engine eng-rpm="2500"
+                            eng-power="30"
+                            displacement="1751"/>
              <actionpt x="3.827" y="0.0" z="0.324"/>
-             <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
-             <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
-             <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
-             <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+             <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
+             <control-input control="STARTER" axis="/controls/engines/engine[0]/starter"/>
+             <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos"/>
+             <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture"/>
   </propeller>
 
   <gear x="3.367" y="0.376" z="-1.193"
@@ -110,14 +121,11 @@
   <tank x="2.806" y="0" z="0.318" capacity="56" />
 
   <!-- pilot -->
-  <weight x="2.616" y="0" z="-0.421" mass-prop="/sim/weight[0]/weight-lb"/>
-
-  <!-- CG Middle of chord : x=2.579 y=0 z=0.054 -->
-  <ballast x="2.5" y="0" z="-1" mass="50"/>
+  <weight x="2.426" y="0" z="-0.551" mass-prop="/sim/weight[0]/weight-lb"/>
 
   <!-- hitch -->
   <hitch name="aerotow" 
-         x="-5.0" y="0" z="-0.65"
+         x="-3.0" y="0" z="-0.65"
          force-is-calculated-by-other="1">
          <tow length="60" 
               weight-per-meter="0.035"
