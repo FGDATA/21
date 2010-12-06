@@ -64,17 +64,6 @@
     <path>Aircraft/21/Models/shadow.xml</path>
   </model>
 
-  <animation>
-    <type>select</type>
-    <object-name>shadowOSG</object-name>
-    <condition>
-      <equals>
-        <property>sim[0]/rendering/shadows-ai</property>
-        <value>true</value>
-      </equals>
-    </condition>
-  </animation>
-
   <!-- Pilote -->
   <model>
     <path>Aircraft/21/Models/Pilot/pilot.xml</path>
@@ -144,9 +133,9 @@
       <z-m>  0.325 </z-m>
     </center>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -162,8 +151,8 @@
   <animation>
     <type>rotate</type>
     <object-name>DeriveComplete</object-name>
-    <property>controls/flight/elevator</property>
-    <factor>15</factor>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> 15 </factor>
     <center>
       <x-m>  2.857</x-m>
       <y-m>  0.000 </y-m>
@@ -171,42 +160,42 @@
     </center>
     <axis>
       <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
     <object-name>prof1</object-name>
-    <property>controls/flight/elevator</property>
-    <factor>-15</factor>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> -15 </factor>
     <center>
       <x-m> 2.772</x-m>
       <y-m> 0.000 </y-m>
       <z-m> 0.249 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
     <object-name>prof3</object-name>
-    <property>controls/flight/elevator</property>
-    <factor>-15</factor>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> -15 </factor>
     <center>
       <x-m>  2.772</x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.893 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -221,51 +210,51 @@
   <animation>
     <type>rotate</type>
     <object-name>ProfondeurComplete</object-name>
-    <property>controls/flight/elevator</property>
-    <factor>15</factor>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> 15 </factor>
     <center>
       <x-m> -2.884</x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.865 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
     <object-name>prof2</object-name>
-    <property>controls/flight/elevator</property>
-    <factor>-15</factor>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> -15 </factor>
     <center>
       <x-m> -2.884</x-m>
       <y-m>  0.000 </y-m>
       <z-m> -1.035 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
     <object-name>prof5</object-name>
-    <property>controls/flight/elevator</property>
-    <factor>-15</factor>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> -15 </factor>
     <center>
       <x-m> -2.884</x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.695 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 1.000 </y>
-      <z> 0.000 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -281,51 +270,51 @@
   <animation>
     <type>rotate</type>
     <object-name>GouverneComplete</object-name>
-    <property>controls/flight/rudder</property>
-    <factor>15</factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> 15 </factor>
     <center>
       <x-m>  2.839</x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.323 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 0.000 </y>
-      <z> 1.000 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
     <object-name>dir2G</object-name>
-    <property>controls/flight/rudder</property>
-    <factor>-15</factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> -15 </factor>
     <center>
       <x-m>  2.888</x-m>
       <y-m> -1.219 </y-m>
       <z-m> -0.321 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 0.000 </y>
-      <z> 1.000 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
     <object-name>dir2D</object-name>
-    <property>controls/flight/rudder</property>
-    <factor>-15</factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> -15 </factor>
     <center>
       <x-m>  2.888</x-m>
       <y-m>  1.219 </y-m>
       <z-m> -0.321 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 0.000 </y>
-      <z> 1.000 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
@@ -339,51 +328,51 @@
   <animation>
     <type>rotate</type>
     <object-name>DirectionComplete</object-name>
-    <property>controls/flight/rudder</property>
-    <factor>15</factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> 15 </factor>
     <center>
       <x-m> -2.884</x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.865 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 0.000 </y>
-      <z> 1.000 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
     <object-name>dir1G</object-name>
-    <property>controls/flight/rudder</property>
-    <factor>-15</factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> -15 </factor>
     <center>
       <x-m> -2.884</x-m>
       <y-m> -0.262 </y-m>
       <z-m> -1.010 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 0.000 </y>
-      <z> 1.000 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
     <object-name>dir1D</object-name>
-    <property>controls/flight/rudder</property>
-    <factor>-15</factor>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> -15 </factor>
     <center>
       <x-m> -2.884</x-m>
       <y-m>  0.262 </y-m>
       <z-m> -1.010 </z-m>
     </center>
     <axis>
-      <x> 0.000 </x>
-      <y> 0.000 </y>
-      <z> 1.000 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
@@ -398,7 +387,7 @@
     <type>rotate</type>
     <object-name>AileronGauche</object-name>
     <property>surface-positions/left-aileron-pos-norm</property>
-    <factor>-15.0</factor>
+    <factor> -15 </factor>
     <axis>
       <x1-m> -1.475 </x1-m>
       <y1-m> -1.107 </y1-m>
@@ -419,7 +408,7 @@
     <type>rotate</type>
     <object-name>AileronDroit</object-name>
     <property>surface-positions/right-aileron-pos-norm</property>
-    <factor>-15.0</factor>
+    <factor> -15 </factor>
     <axis>
       <x1-m> -1.475 </x1-m>
       <y1-m>  2.493 </y1-m>
