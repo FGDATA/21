@@ -1,34 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
+  
   <path>21.ac</path>
-
+  
   <animation>
     <!-- Objets opaques -->
+    <object-name>resevoir</object-name>
     <object-name>structure1</object-name>
-    <object-name>structure2</object-name>
-    <object-name>support</object-name>
-    <object-name>axe</object-name>
     <object-name>patte</object-name>
+    
+    <object-name>structure2</object-name>
     <object-name>ailes</object-name>
-    <object-name>queue</object-name>
     <object-name>ailessoie</object-name>
+    <object-name>queue</object-name>
     <object-name>queuesoie</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronGsoie</object-name>
     <object-name>aileronD</object-name>
     <object-name>aileronDsoie</object-name>
-    <object-name>manche</object-name>
     <object-name>roueG</object-name>
     <object-name>roueD</object-name>
-    <object-name>moteur</object-name>
     <object-name>helice</object-name>
     <object-name>bol</object-name>
-    <object-name>resevoir</object-name>
-
+    <object-name>cables</object-name>
+    
     <!-- Objets transparents -->
-    <object-name>cables</object-name>
     <object-name>dir1G</object-name>
     <object-name>dir1D</object-name>
     <object-name>dir2G</object-name>
@@ -41,10 +38,64 @@
     <object-name>propblur</object-name>
     <object-name>propdisc</object-name>
   </animation>
-
+  
   <animation>
-    <type>noshadow</type>
+    <type>material</type>
+    <object-name>resevoir</object-name>
+    <object-name>structure1</object-name>
+    <object-name>patte</object-name>
+    
+    <object-name>structure2</object-name>
+    <object-name>ailes</object-name>
+    <object-name>queue</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>helice</object-name>
+    <object-name>bol</object-name>
     <object-name>cables</object-name>
+    
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>ailessoie</object-name>
+    <object-name>queuesoie</object-name>
+    <object-name>aileronGsoie</object-name>
+    <object-name>aileronDsoie</object-name>
+       
+    <property-base>sim/model/livery-alpha</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture-alpha.png</texture>
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+  </animation>
+  
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>resevoir</object-name>
+    <object-name>structure1</object-name>
+    <object-name>patte</object-name>
+  </effect>
+  
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>ailessoie</object-name>
+    <object-name>queuesoie</object-name>
+    <object-name>aileronGsoie</object-name>
+    <object-name>aileronDsoie</object-name>
     <object-name>dir1G</object-name>
     <object-name>dir1D</object-name>
     <object-name>dir2G</object-name>
@@ -56,24 +107,74 @@
     <object-name>prof5</object-name>
     <object-name>propdisc</object-name>
     <object-name>propblur</object-name>
-  </animation>
-
+  </effect>
+  
+  <!-- Intérieur -->
+  <model>
+    <path>Aircraft/21/Models/Interior/interior.xml</path>
+  </model>
+  
   <!-- Une ombre pour OSG -->
   <model>
-    <name>shadowOSG</name>
     <path>Aircraft/21/Models/shadow.xml</path>
-  </model>
-
-  <!-- Pilote -->
-  <model>
-    <path>Aircraft/21/Models/Pilot/pilot.xml</path>
     <offsets>
-      <x-m> -2.763 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.895 </z-m>
+      <x-m>  0.0 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> -1.1 </z-m>
     </offsets>
   </model>
 
+  <!-- The engine -->  
+  <model>
+    <path>Aircraft/21/Models/Engine/engine.xml</path>
+    <offsets>
+      <x-m> -3.60025 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  0.34184 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Cranking effects -->
+  <model>
+    <path>Aircraft/21/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.60025 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  0.34184 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Effets sur le sol -->
+  <!-- Left wheel -->
+  <model>
+    <path>Aircraft/21/Models/Effects/ground/ground0.xml</path>
+    <offsets>
+      <x-m> -3.367 </x-m>
+      <y-m> -0.376 </y-m>
+      <z-m> -1.193 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Right wheel -->
+  <model>
+    <path>Aircraft/21/Models/Effects/ground/ground1.xml</path>
+    <offsets>
+      <x-m> -3.367 </x-m>
+      <y-m>  0.376 </y-m>
+      <z-m> -1.193 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Rear -->
+  <model>
+    <path>Aircraft/21/Models/Effects/ground/ground2.xml</path>
+    <offsets>
+      <x-m>  0.867 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.158 </z-m>
+    </offsets>
+  </model>
+  
   <!-- L'hélice --> 
   <animation>
     <name>HeliceComplete</name>
@@ -81,7 +182,7 @@
     <object-name>propblur</object-name>
     <object-name>helice</object-name>
   </animation>
-
+  
   <!-- Séléction de l'objet visible en fonction des rpm -->
   <animation>
     <type>select</type>
@@ -93,38 +194,44 @@
       </greater-than>
     </condition>
   </animation>
-
+  
   <animation>
     <type>select</type>
     <object-name>propblur</object-name>
     <condition>
-    <and>
-      <greater-than>
-        <property>engines/engine[0]/rpm</property>
-        <value>600.000</value>
-      </greater-than>
-      <less-than>
-        <property>engines/engine[0]/rpm</property>
-        <value>1500.001</value>
-      </less-than>
-    </and>
+      <and>
+        <greater-than>
+          <property>engines/engine[0]/rpm</property>
+          <value>600.000</value>
+        </greater-than>
+        <less-than>
+          <property>engines/engine[0]/rpm</property>
+          <value>1500.001</value>
+        </less-than>
+      </and>
     </condition>
   </animation>
-
+  
   <animation>
     <type>select</type>
     <object-name>helice</object-name>
     <condition>
       <less-than>
         <property>engines/engine[0]/rpm</property>
-	<value>1500</value>
+        <value>1500</value>
       </less-than>
     </condition>
   </animation>
-
+  
   <animation>
     <type>spin</type>
     <object-name>HeliceComplete</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>engines/engine[0]/rpm</property>
     <factor> -1 </factor>
     <center>
@@ -138,7 +245,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <!-- Gouverne de profondeur -->
   <animation>
     <name>DeriveComplete</name>
@@ -147,7 +254,7 @@
     <object-name>prof1</object-name>
     <object-name>prof3</object-name>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>DeriveComplete</object-name>
@@ -164,7 +271,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>prof1</object-name>
@@ -181,7 +288,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>prof3</object-name>
@@ -198,15 +305,13 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <name>ProfondeurComplete</name>
-    <object-name>manche</object-name>
-    <object-name>support</object-name>
     <object-name>prof2</object-name>
     <object-name>prof5</object-name>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>ProfondeurComplete</object-name>
@@ -223,7 +328,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>prof2</object-name>
@@ -240,7 +345,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>prof5</object-name>
@@ -257,7 +362,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <!-- Gouverne de direction -->
   <animation>
     <name>GouverneComplete</name>
@@ -266,7 +371,7 @@
     <object-name>dir2G</object-name>
     <object-name>dir2D</object-name>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>GouverneComplete</object-name>
@@ -283,7 +388,7 @@
       <z> 1 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>dir2G</object-name>
@@ -300,7 +405,7 @@
       <z> 1 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>dir2D</object-name>
@@ -317,14 +422,13 @@
       <z> 1 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <name>DirectionComplete</name>
-    <object-name>manche</object-name>
     <object-name>dir1G</object-name>
     <object-name>dir1D</object-name>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>DirectionComplete</object-name>
@@ -341,7 +445,7 @@
       <z> 1 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>dir1G</object-name>
@@ -358,7 +462,7 @@
       <z> 1 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>dir1D</object-name>
@@ -375,14 +479,14 @@
       <z> 1 </z>
     </axis>
   </animation>
-
+  
   <!-- Animations des ailerons -->
   <animation>
     <name>AileronGauche</name>
     <object-name>aileronG</object-name>
     <object-name>aileronGsoie</object-name>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>AileronGauche</object-name>
@@ -397,13 +501,13 @@
       <z2-m>  0.335 </z2-m>
     </axis>
   </animation> 
-
+  
   <animation>
     <name>AileronDroit</name>
     <object-name>aileronD</object-name>
     <object-name>aileronDsoie</object-name>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>AileronDroit</object-name>
@@ -418,7 +522,7 @@
       <z2-m>  0.065 </z2-m>
     </axis>
   </animation>
-
+  
   <!-- Rotation des roues lors du roulage -->
   <animation>
     <type>spin</type>
@@ -434,7 +538,7 @@
       <z2-m> -0.906 </z2-m>
     </axis>
   </animation>
-
+  
   <animation>
     <type>spin</type>
     <object-name>roueD</object-name>
@@ -449,6 +553,5 @@
       <z2-m> -0.887 </z2-m>
     </axis>
   </animation>
-
+  
 </PropertyList>
-

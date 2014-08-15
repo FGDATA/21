@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>darrack.ac</path>
+
+  <animation>
+    <object-name>moteur</object-name>
+    <object-name>pistonlow</object-name>
+
+    <!-- transparent objects -->
+  </animation>
+
+  <model>
+    <name>Bloc1</name>
+    <path>Aircraft/21/Models/Engine/blocpiston.xml</path>
+  </model>
+  
+  <model>
+    <name>Bloc2</name>
+    <path>Aircraft/21/Models/Engine/blocpiston.xml</path>
+    <offsets>
+      <heading-deg> 180 </heading-deg>
+    </offsets>
+  </model>
+  
+  <animation>
+    <name>MoteurHigh</name>
+    <object-name>Bloc1</object-name>
+    <object-name>Bloc2</object-name>
+  </animation>
+  
+  <animation>
+    <name>MoteurLow</name>
+    <object-name>pistonlow</object-name>
+  </animation>
+  
+  <animation>
+    <type>range</type>
+    <object-name>MoteurHigh</object-name>
+    <min-m>0</min-m>
+    <max-property>/sim/rendering/static-lod/detailed</max-property>
+  </animation>
+
+  <animation>
+    <type>range</type>
+    <object-name>MoteurLow</object-name>
+    <min-property>/sim/rendering/static-lod/detailed</min-property>
+    <max-property>/sim/rendering/static-lod/bare</max-property>
+  </animation>
+
+</PropertyList>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- Santo Dumont N 21 "Demoiselle" 1909 : 2009 Emmanuel BARANGER
                                            2010 EMmanuel BARANGER with melchior script
@@ -42,8 +42,8 @@
         dihedral="10"
         camber="0.001"
         taper="1">
-        <stall aoa="18" width="4" peak="1.5"/>
-        <flap0 start="0.45" end="1" lift="1.5" drag="1.4"/>
+        <stall aoa="14" width="1" peak="1.5"/>
+        <flap0 start="0.45" end="1" lift="1.28" drag="1.1"/>
 
         <control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
         <control-input axis="/controls/flight/aileron-trim" control="FLAP0" split="true"/>
@@ -56,8 +56,8 @@
          chord="1.13"
          length="1.16"
          taper="1">
-         <stall aoa="16" width="4" peak="1.5"/>
-         <flap0 start="0" end="1" lift="1.4" drag="1.2"/>
+         <stall aoa="12" width="1" peak="1.0"/>
+         <flap0 start="0" end="1" lift="1.4" drag="1.1"/>
 
          <control-input axis="/controls/flight/elevator" control="FLAP0"/>
          <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
@@ -69,8 +69,8 @@
          chord="1.37"
          length="1.068"
          taper="1">
-         <stall aoa="16" width="4" peak="1.5"/>
-         <flap0 start="0" end="1" lift="2.0" drag="1.2"/>
+         <stall aoa="10" width="1" peak="1.0"/>
+         <flap0 start="0" end="1" lift="1.25" drag="1.1"/>
 
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
          <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
@@ -96,14 +96,15 @@
              takeoff-power="30"
              takeoff-rpm="2300"
              gear-ratio="0.5">
+             <actionpt x="3.827" y="0.0" z="0.324"/>
              <piston-engine eng-rpm="2500"
                             eng-power="30"
-                            displacement="1751"/>
-             <actionpt x="3.827" y="0.0" z="0.324"/>
-             <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
-             <control-input control="STARTER" axis="/controls/engines/engine[0]/starter"/>
-             <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos"/>
-             <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture"/>
+                            displacement="1751">
+                            <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
+                            <control-input control="STARTER" axis="/controls/engines/engine[0]/starter"/>
+                            <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos"/>
+                            <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture"/>
+             </piston-engine>
   </propeller>
 
   <gear x="3.367" y="0.376" z="-1.193"
@@ -123,7 +124,7 @@
   <!-- pilot -->
   <weight x="2.426" y="0" z="-0.551" mass-prop="/sim/weight[0]/weight-lb"/>
 
-  <!-- hitch -->
+  <!-- hitch
   <hitch name="aerotow" 
          x="-3.0" y="0" z="-0.65"
          force-is-calculated-by-other="1">
@@ -136,5 +137,5 @@
                 min-tow-length="60"
                 initial-tow-length="60"/>
   </hitch>
-
+  -->
 </airplane>
